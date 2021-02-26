@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "194243288409",
+    "project_id": "grepolis-alarm",
+    "storage_bucket": "grepolis-alarm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:194243288409:android:9daf592215cf9ea3ad4048",
+        "android_client_info": {
+          "package_name": "com.dolinek.alarm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "194243288409-7nt7bf3s71hpqte5nresgtd178b2tss6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0U4TRw2DD-PDS0-00HYP2-v9vk9kO2nk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "194243288409-7nt7bf3s71hpqte5nresgtd178b2tss6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
