@@ -33,7 +33,7 @@ const App = () => {
   useEffect(() => {
     messaging()
       .getToken()
-      .then((token) => console.log(token));
+      .then((token) => console.log('FCM TOKEN: ', token));
   }, []);
   return (
     <>

@@ -20,15 +20,18 @@ PushNotification.createChannel(
     importance: 4, // (optional) default: 4. Int value of the Android notification importance
     vibrate: true, // (optional) default: true. Creates the default vibration patten if true.
   },
-  (created) => console.log(`createChannel returned '${created}'`), // (optional) callback returns whether the channel was created, false means it already existed.
+  created => console.log(`createChannel returned '${created}'`), // (optional) callback returns whether the channel was created, false means it already existed.
 );
 
 PushNotification.configure({
   // (optional) Called when Token is generated (iOS and Android)
-  onRegister: function (token) {},
+  onRegister: function(token) {
+    console.log('Here is your TOKEN: ', token);
+  },
 
   // (required) Called when a remote is received or opened, or local notification is opened
-  onNotification: function (notification) {
+  onNotification: function(notification) {
+    console.log('NOTIFICATION: ', notification);
     PushNotification.localNotification({
       channelId: 'attack',
       id: notification.id,
@@ -48,7 +51,9 @@ PushNotification.configure({
       title: notification.title,
       message: notification.message, // (required)
       playSound: true,
-      soundName: 'alarm',
+      sound: 'default',
+      soundName: 'alarm.wav',
+      isSilent: false,
       // number: number // silly library, iOS requires number, while android string...
     });
 
@@ -59,7 +64,7 @@ PushNotification.configure({
   },
 
   // (optional) Called when Registered Action is pressed and invokeApp is false, if true onNotification will be called (Android)
-  onAction: function (notification) {
+  onAction: function(notification) {
     console.log('ACTION:', notification.action);
     console.log('NOTIFICATION:', notification);
 
@@ -67,7 +72,7 @@ PushNotification.configure({
   },
 
   // (optional) Called when the user fails to register for remote notifications. Typically occurs when APNS is having issues, or the device is a simulator. (iOS)
-  onRegistrationError: function (err) {
+  onRegistrationError: function(err) {
     console.error(err.message, err);
   },
 
